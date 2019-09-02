@@ -55,9 +55,10 @@ WORKDIR /app
 
 RUN  pip3 install --no-cache-dir -r requirements.txt 
 
-ENV MODEL=/models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite \
-    LABELS=/models/coco_labels.txt
+ENV MODEL=mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite \
+    LABELS=coco_labels.txt \
+    MODELS_DIRECTORY=/models/
 
 EXPOSE 5000
 
-CMD  exec python3 coral-app.py --model  "${MODEL}" --labels "${LABELS}" --models_directory /models/
+CMD  exec python3 coral-app.py --model  "${MODEL}" --labels "${LABELS}" --models_directory "${MODELS_DIRECTORY}"
