@@ -1,4 +1,3 @@
-
 #
 #  Louis Mamakos <louie@transsys.com>
 #  Philipp Hellmich <phil@hellmi.de>
@@ -19,7 +18,7 @@
 #  passing in environment variables MODEL and LABELS referring to
 #  the files.
 
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 WORKDIR /tmp
 
